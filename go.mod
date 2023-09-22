@@ -1,4 +1,4 @@
-module GoUtils
+module github.com/Agusmazzeo/GoUtils
 
 go 1.20
 

@@ -1,8 +1,8 @@
 package messenger
 
 import (
-	"GoUtils/src/servicebus"
-	"GoUtils/src/worker"
+	"github.com/Agusmazzeo/GoUtils/src/servicebus"
+	"github.com/Agusmazzeo/GoUtils/src/worker"
 	"testing"
 	"time"
 )

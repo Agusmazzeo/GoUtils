@@ -1,11 +1,11 @@
 package elasticsearch_client
 
 import (
-	"GoUtils/src/utils"
 	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/Agusmazzeo/GoUtils/src/utils"
 	"strings"
 	"time"
 
