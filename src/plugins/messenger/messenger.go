@@ -1,9 +1,9 @@
 package messenger
 
 import (
+	"GoUtils/src/servicebus"
+	"GoUtils/src/worker"
 	"fmt"
-	"prod-con/src/servicebus"
-	"prod-con/src/worker"
 	"sync"
 
 	"github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus"

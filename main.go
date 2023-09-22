@@ -1,6 +1,6 @@
 package main
 
-import "prod-con/src/worker"
+import "GoUtils/src/worker"
 
 func main() {
 
