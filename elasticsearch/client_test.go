@@ -8,12 +8,11 @@ import (
 
 func TestLocalElasticSearchClient(t *testing.T) {
 
-	// host := "https://carvanalistingsnapshot-dev.es.westus2.azure.elastic-cloud.com:9243/"
 	host := "http://127.0.0.1:9200"
 	username := "elastic"
 	password := "pass"
 	index := "listing"
-	es := NewElasticSearchClient(host, username, password, index)
+	es := NewClient(host, username, password, index)
 	if err := es.CreateIndex(context.Background(), index); err != nil {
 		t.Logf(err.Error())
 	}
@@ -80,34 +79,6 @@ func TestLocalElasticSearchClient(t *testing.T) {
 
 		if (*savedDocs)[0].Source["make"] != doc.Source["make"] {
 			t.Errorf("Expected %v, got %v", doc.Source["make"], (*savedDocs)[0].Source["make"])
-		}
-	})
-
-}
-
-func TestElasticSearchClient(t *testing.T) {
-
-	host := "https://carvanalistingsnapshot-dev.es.westus2.azure.elastic-cloud.com:9243/"
-	username := "jwu"
-	password := "YC6VT9U*m983Wo"
-	index := "listing"
-	es := NewElasticSearchClient(host, username, password, index)
-
-	t.Run("Test get multiple documents", func(t *testing.T) {
-		size := 20000
-		query := map[string]interface{}{
-			"query": map[string]interface{}{
-				"match_all": map[string]interface{}{},
-			},
-		}
-		savedDocs, err := es.GetDocumentsByQuery(context.Background(), query, size, "false")
-
-		if err != nil {
-			t.Errorf("Error getting document: %v", err)
-		}
-
-		if len(*savedDocs) < size {
-			t.Errorf("Expected %v at least, got %v", size, len(*savedDocs))
 		}
 	})
 

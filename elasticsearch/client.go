@@ -54,7 +54,7 @@ type ElasticSearchClient struct {
 	timeout time.Duration
 }
 
-func NewElasticSearchClient(host, username, password, index string) *ElasticSearchClient {
+func NewClient(host, username, password, index string) *ElasticSearchClient {
 	cfg := elasticsearch.Config{
 		Addresses: []string{host},
 		Username:  username,
