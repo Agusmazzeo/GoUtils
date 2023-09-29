@@ -9,7 +9,7 @@ import (
 func TestLocalElasticSearchClient(t *testing.T) {
 
 	// host := "https://carvanalistingsnapshot-dev.es.westus2.azure.elastic-cloud.com:9243/"
-	host := "http://0.0.0.0:9200"
+	host := "http://127.0.0.1:9200"
 	username := "elastic"
 	password := "pass"
 	index := "listing"

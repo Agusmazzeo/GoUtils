@@ -1,10 +1,11 @@
 package messenger
 
 import (
-	"github.com/Agusmazzeo/GoUtils/src/servicebus"
-	"github.com/Agusmazzeo/GoUtils/src/worker"
 	"testing"
 	"time"
+
+	"github.com/Agusmazzeo/GoUtils/servicebus"
+	"github.com/Agusmazzeo/GoUtils/worker"
 )
 
 func TestMessenger(t *testing.T) {

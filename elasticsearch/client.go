@@ -5,9 +5,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/Agusmazzeo/GoUtils/src/utils"
 	"strings"
 	"time"
+
+	"github.com/Agusmazzeo/GoUtils/utils"
 
 	"github.com/elastic/go-elasticsearch/v8"
 )
