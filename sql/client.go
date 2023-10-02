@@ -2,6 +2,7 @@ package sql
 
 import (
 	"database/sql"
+	"fmt"
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -9,8 +10,8 @@ import (
 	"gorm.io/gorm"
 )
 
-func NewClient() *SQLClient {
-	db, err := sql.Open("mysql", "user:password@tcp(db:3306)/classicmodels")
+func NewClient(driver, host, port, database, username, password string) *SQLClient {
+	db, err := sql.Open(driver, getDataSourceName(host, port, database, username, password))
 	if err != nil {
 		panic(err)
 	}
@@ -27,6 +28,10 @@ func NewClient() *SQLClient {
 		client: *gormDB,
 	}
 
+}
+
+func getDataSourceName(host, port, database, username, password string) string {
+	return fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", username, password, host, port, database)
 }
 
 type SQLClient struct {
